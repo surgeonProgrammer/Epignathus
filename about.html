@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - EPIGNATHUS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="text-gray-900">
+    <!-- Navbar -->
+    <nav
+      class="fixed w-full top-0 z-50 shadow-lg bg-white mx-auto flex justify-between items-center py-4 px-[30px] md:px-[100px]"
+    >
+      <!-- Logo and Title -->
+      <div class="flex items-center text-[#9F2747] font-bold text-4xl">
+        <p>EPIGNATHUS</p>
+      </div>
+
+      <!-- Full Menu (visible on md and larger screens) -->
+      <ul class="hidden lg:flex space-x-6 text-lg font-semibold text-[#0B3558]">
+        <li><a href="index.html" class="hover:text-red-400">Home</a></li>
+        <li><a href="about.html" class="hover:text-red-400">About</a></li>
+        <li>
+          <a href="resources.html" class="hover:text-red-400">Resources</a>
+        </li>
+        <li><a href="quizzes.html" class="hover:text-red-400">Quizzes</a></li>
+        <li>
+          <a href="contact.html" class="hover:text-red-400">Contact Us</a>
+        </li>
+      </ul>
+
+      <!-- Hamburger Menu (visible only on small screens) -->
+      <button class="block lg:hidden text-[#3B888E]" id="menu-btn">
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="#0F2144"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+        <p class="text-[12px] font-bold text-[#0F2144]">Menu</p>
+      </button>
+
+      <!-- Mobile Menu Links (Initially Hidden) -->
+      <ul
+        id="menu"
+        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg md:hidden"
+      >
+        <li>
+          <a href="index.html" class="block px-4 py-2 hover:text-red-400"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="block px-4 py-2 hover:text-red-400"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="resources.html" class="block px-4 py-2 hover:text-red-400"
+            >Resources</a
+          >
+        </li>
+        <li>
+          <a href="quizzes.html" class="block px-4 py-2 hover:text-red-400"
+            >Quizzes</a
+          >
+        </li>
+        <li>
+          <a href="contact.html" class="block px-4 py-2 hover:text-red-400"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section
+      class="flex flex-col items-center justify-center bg-gradient-to-r from-[#6DAED9] to-[#98C2E3] text-white py-12 mt-[70px] px-6 md:px-12 lg:px-[100px]"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-extrabold text-center mb-8"
+        style="font-family: 'Montserrat', sans-serif"
+      >
+        About Us
+      </h1>
+      <p class="text-lg md:text-xl text-center leading-relaxed max-w-3xl mb-8">
+        Welcome to EPIGNATHUS, a platform dedicated to assisting surgical
+        residents navigate their rotations and excel in membership examinations,
+        such as those offered by the GCPS or WACS. Our mission is to equip you
+        with the knowledge, resources, and guidance needed to succeed.
+      </p>
+      <p class="text-lg md:text-xl text-center leading-relaxed max-w-3xl">
+        The comprehensive resources, including recommended textbooks, past
+        questions, and quizzes, are tailored to enhance your learning experience
+        and help you excel in your surgical journey.
+      </p>
+    </section>
+
+    <!-- Section Before Footer -->
+    <section class="py-16">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-[#1D3557]">
+          Resources at Your Fingertips
+        </h2>
+        <p class="text-gray-400 mt-4 leading-[30px] mx-[30px]">
+          Explore our curated library of recommended books, surgical past
+          questions, and quizzes designed to prepare you for your surgical
+          membership exams.
+        </p>
+        <button
+          class="bg-[#9F2747] hover:bg-[#B03A5E] text-white text-lg font-semibold px-6 py-3 rounded-full shadow-lg mt-8"
+          onclick="accessResource('https://www.dropbox.com/scl/fo/kyvasiil64ft2jnc12np5/ABhgCyayMrmuaDBJZgLh0gI?rlkey=l5cnlzq1i19taj9twz7fmurkv&st=26iksfhz&dl=0')"
+        >
+          Explore Resources
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="container mx-auto text-center">
+        <p class="text-gray-400">© 2024 EPIGNATHUS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+      function accessResource(link) {
+        const passwordInput =
+          document.getElementById("resource-password").value;
+
+        if (passwordInput === "williamladd") {
+          window.open(link, "_blank");
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+      function accessResource(link) {
+        const passwordInput = prompt("Please enter the password:");
+
+        if (passwordInput === "williamladd") {
+          window.open(link, "_blank");
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+    </script>
+  </body>
+</html>

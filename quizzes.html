@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EPIGNATHUS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .question-container {
+        margin-bottom: 20px;
+      }
+      .question {
+        font-weight: bold;
+      }
+      .answers {
+        margin-top: 10px;
+      }
+      .feedback {
+        margin-top: 5px;
+        display: none;
+        font-style: italic;
+      }
+      .feedback.correct {
+        color: green;
+      }
+      .feedback.wrong {
+        color: red;
+      }
+    </style>
+  </head>
+  <body class="text-gray-900">
+    <!-- Navbar -->
+    <nav
+      class="fixed w-full top-0 z-50 shadow-lg bg-white mx-auto flex justify-between items-center py-4 px-[30px] md:px-[100px]"
+    >
+      <!-- Logo and Title -->
+      <div class="flex items-center text-[#9F2747] font-bold text-4xl">
+        <p>EPIGNATHUS</p>
+      </div>
+
+      <!-- Full Menu (visible on md and larger screens) -->
+      <ul class="hidden lg:flex space-x-6 text-lg font-semibold text-[#0B3558]">
+        <li>
+          <a href="index.html" class="hover:text-red-400">Home</a>
+        </li>
+        <li>
+          <a href="about.html" class="hover:text-red-400">About</a>
+        </li>
+        <li>
+          <a href="resources.html" class="hover:text-red-400">Resources</a>
+        </li>
+
+        <li>
+          <a href="research.html" class="hover:text-red-400">Quizzes</a>
+        </li>
+
+        <li>
+          <a href="contact.html" class="hover:text-red-400">Contact Us</a>
+        </li>
+      </ul>
+
+      <!-- Hamburger Menu (visible only on small screens) -->
+      <button class="block lg:hidden text-[#3B888E]" id="menu-btn">
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="#0F2144"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+        <p class="text-[12px] font-bold text-[#0F2144]">Menu</p>
+      </button>
+
+      <!-- Mobile Menu Links (Initially Hidden) -->
+      <ul
+        id="menu"
+        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg md:hidden"
+      >
+        <li>
+          <a href="index.html" class="block px-4 py-2 hover:text-red-400"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a href="about.html" class="block px-4 py-2 hover:text-red-400"
+            >About</a
+          >
+        </li>
+        <li>
+          <a href="resources.html" class="block px-4 py-2 hover:text-red-400"
+            >Resources</a
+          >
+        </li>
+
+        <li>
+          <a href="quizzes.html" class="block px-4 py-2 hover:text-red-400"
+            >Quizzes</a
+          >
+        </li>
+
+        <li>
+          <a href="contact.html" class="block px-4 py-2 hover:text-red-400"
+            >Contact Us</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <h1 class="mt-[100px] text-center">Sample Quiz</h1>
+    <div id="mcq-container" class="mx-[50px]">
+      <!-- Question 1 -->
+      <div class="question-container">
+        <p class="question">
+          1. What is the most common cause of acute appendicitis?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(1, 'a')">a) Viral infection</button>
+          <button onclick="checkAnswer(1, 'b')">b) Fecalith</button>
+          <button onclick="checkAnswer(1, 'c')">c) Malignancy</button>
+          <button onclick="checkAnswer(1, 'd')">
+            d) Intestinal perforation
+          </button>
+        </div>
+        <p id="feedback1" class="feedback">Correct answer: Fecalith</p>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-container">
+        <p class="question">
+          2. Which of the following is the best initial treatment for
+          intussusception in a child?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(2, 'a')">a) Laparotomy</button>
+          <button onclick="checkAnswer(2, 'b')">b) Air enema</button>
+          <button onclick="checkAnswer(2, 'c')">c) Intravenous fluids</button>
+          <button onclick="checkAnswer(2, 'd')">d) Antibiotics</button>
+        </div>
+        <p id="feedback2" class="feedback">Correct answer: Air enema</p>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-container">
+        <p class="question">
+          3. What is the first-line treatment for a small pneumothorax?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(3, 'a')">a) Chest tube insertion</button>
+          <button onclick="checkAnswer(3, 'b')">b) Needle aspiration</button>
+          <button onclick="checkAnswer(3, 'c')">c) Observation</button>
+          <button onclick="checkAnswer(3, 'd')">d) Surgery</button>
+        </div>
+        <p id="feedback3" class="feedback">Correct answer: Observation</p>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-container">
+        <p class="question">
+          4. What is the most common cause of large bowel obstruction in adults?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(4, 'a')">a) Diverticulitis</button>
+          <button onclick="checkAnswer(4, 'b')">b) Adhesions</button>
+          <button onclick="checkAnswer(4, 'c')">c) Colon cancer</button>
+          <button onclick="checkAnswer(4, 'd')">d) Volvulus</button>
+        </div>
+        <p id="feedback4" class="feedback">Correct answer: Colon cancer</p>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question-container">
+        <p class="question">
+          5. What is the initial treatment for an acute anal fissure?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(5, 'a')">a) Surgery</button>
+          <button onclick="checkAnswer(5, 'b')">
+            b) High-fiber diet and sitz baths
+          </button>
+          <button onclick="checkAnswer(5, 'c')">c) Topical steroids</button>
+          <button onclick="checkAnswer(5, 'd')">d) Antibiotics</button>
+        </div>
+        <p id="feedback5" class="feedback">
+          Correct answer: High-fiber diet and sitz baths
+        </p>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question-container">
+        <p class="question">
+          6. Which imaging modality is most sensitive for detecting
+          cholelithiasis?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(6, 'a')">a) CT scan</button>
+          <button onclick="checkAnswer(6, 'b')">b) MRI</button>
+          <button onclick="checkAnswer(6, 'c')">c) Ultrasound</button>
+          <button onclick="checkAnswer(6, 'd')">d) X-ray</button>
+        </div>
+        <p id="feedback6" class="feedback">Correct answer: Ultrasound</p>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="question-container">
+        <p class="question">
+          7. What is the most common type of hernia in adults?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(7, 'a')">a) Umbilical hernia</button>
+          <button onclick="checkAnswer(7, 'b')">b) Femoral hernia</button>
+          <button onclick="checkAnswer(7, 'c')">c) Inguinal hernia</button>
+          <button onclick="checkAnswer(7, 'd')">d) Incisional hernia</button>
+        </div>
+        <p id="feedback7" class="feedback">Correct answer: Inguinal hernia</p>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="question-container">
+        <p class="question">
+          8. Which of the following is a complication of peptic ulcer disease?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(8, 'a')">a) Gastric cancer</button>
+          <button onclick="checkAnswer(8, 'b')">b) Perforation</button>
+          <button onclick="checkAnswer(8, 'c')">c) Malabsorption</button>
+          <button onclick="checkAnswer(8, 'd')">d) Diverticulosis</button>
+        </div>
+        <p id="feedback8" class="feedback">Correct answer: Perforation</p>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="question-container">
+        <p class="question">
+          9. What is the primary indication for a Whipple procedure?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(9, 'a')">a) Chronic pancreatitis</button>
+          <button onclick="checkAnswer(9, 'b')">b) Pancreatic cancer</button>
+          <button onclick="checkAnswer(9, 'c')">c) Gallbladder cancer</button>
+          <button onclick="checkAnswer(9, 'd')">d) Liver metastases</button>
+        </div>
+        <p id="feedback9" class="feedback">Correct answer: Pancreatic cancer</p>
+      </div>
+
+      <!-- Question 10 -->
+      <div class="question-container">
+        <p class="question">
+          10. Which of the following is the best initial imaging study for
+          suspected bowel obstruction?
+        </p>
+        <div class="answers">
+          <button onclick="checkAnswer(10, 'a')">a) MRI</button>
+          <button onclick="checkAnswer(10, 'b')">b) X-ray</button>
+          <button onclick="checkAnswer(10, 'c')">c) CT scan</button>
+          <button onclick="checkAnswer(10, 'd')">d) Ultrasound</button>
+        </div>
+        <p id="feedback10" class="feedback">Correct answer: X-ray</p>
+      </div>
+
+      <!-- You can copy and paste this structure for Questions 11 to 50 -->
+      <!-- Each new question will follow the same structure as the ones above -->
+    </div>
+
+    <!-- Main Content Placeholder -->
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+
+    <footer class="bg-[#0F2144] text-white py-4 text-center">
+      <p>&copy; 2024 Epignathus. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+      let currentIndex = 0;
+      const images = [
+        "images/2021.jpg",
+        "images/2022.jpg",
+        "images/2023.jpg",
+        "images/2024.jpg",
+      ];
+
+      // Add more image paths as necessary
+      function showImage(index) {
+        const imgElement = document.getElementById("carousel-image");
+        imgElement.src = images[index];
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      }
+
+      // Automatic image transition
+      setInterval(nextImage, 3000);
+
+      function accessResource(link) {
+        const passwordInput =
+          document.getElementById("resource-password").value;
+
+        if (passwordInput === "williamladd") {
+          window.open(link, "_blank");
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+
+      function accessResource(link) {
+        const passwordInput = prompt("Please enter the password:");
+
+        if (passwordInput === "williamladd") {
+          window.open(link, "_blank");
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+      function checkAnswer(questionNumber, selectedOption) {
+        // Define correct answers for each question
+        const correctAnswers = {
+          1: "b", // Question 1: Fecalith
+          2: "b", // Question 2: Air enema
+          3: "c", // Question 3: Observation
+          4: "c", // Question 4: Colon cancer
+          5: "b", // Question 5: High-fiber diet and sitz baths
+          6: "c", // Question 6: Ultrasound
+          7: "c", // Question 7: Inguinal hernia
+          8: "b", // Question 8: Perforation
+          9: "b", // Question 9: Pancreatic cancer
+          10: "b", // Question 10: X-ray
+          // Add correct answers for questions 11 to 50 here...
+        };
+
+        // Get the feedback element for the current question
+        const feedbackElement = document.getElementById(
+          "feedback" + questionNumber
+        );
+
+        // Check if the selected answer is correct
+        if (selectedOption === correctAnswers[questionNumber]) {
+          feedbackElement.textContent = "Correct! Well done.";
+          feedbackElement.classList.add("correct");
+          feedbackElement.classList.remove("wrong");
+        } else {
+          feedbackElement.textContent =
+            "Incorrect! " + feedbackElement.textContent;
+          feedbackElement.classList.add("wrong");
+          feedbackElement.classList.remove("correct");
+        }
+
+        // Show the feedback
+        feedbackElement.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
