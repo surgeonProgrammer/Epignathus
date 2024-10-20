@@ -429,6 +429,150 @@
         </div>
       </div>
     </section>
+
+
+    <!-- Blog/News Section with Grid Layout -->
+
+    <!-- Live Event Countdown Section -->
+    <section class="bg-white py-12 px-6 md:px-12 lg:px-[100px] text-center">
+      <h2 class="text-4xl font-extrabold text-[#0B3558] mb-6" style="font-family: 'Montserrat', sans-serif">
+        Countdown to October 2025 Exam
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Your days are numbered if you are in third year.
+      </p>
+    
+      <!-- Countdown Timer -->
+      <div id="countdown" class="countdown flex justify-center space-x-2 md:space-x-4 text-2xl md:text-3xl">
+        <div>
+          <span id="days">365</span> Days
+        </div>
+        <div>
+          <span id="hours">00</span> Hours
+        </div>
+        <div>
+          <span id="minutes">00</span> Minutes
+        </div>
+        <div>
+          <span id="seconds">00</span> Seconds
+        </div>
+      </div>
+    </section>
+    
+     
+    
+
+    
+    <section class="bg-white py-12 px-6 md:px-12 lg:px-[100px] text-center">
+      <h2 class="text-4xl font-extrabold text-[#0B3558] mb-6" style="font-family: 'Montserrat', sans-serif">
+        Quiz of the Day
+      </h2>
+      <p class="text-lg text-gray-600 mb-2">
+        Test your knowledge!
+      </p>
+  
+      <!-- Quiz Button -->
+      <button id="quizBtn" class="bg-[#F9BB3B] text-white py-3 px-6 rounded-full hover:bg-[#e1a828] font-bold">
+        Take the Quiz
+      </button>
+    </section>
+  
+    <!-- Modal -->
+    <div id="quizModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+      <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+        <h3 class="text-2xl font-bold mb-4">Quiz Question</h3>
+        <p class="text-gray-700 mb-4">What is the distance of a Meckel's diverticulum from the ileocaecal junction in feet?</p>
+  
+        <!-- Input Field -->
+        <input id="quizAnswer" type="text" placeholder="Enter your answer" class="border border-gray-300 p-2 rounded w-full mb-4" />
+  
+        <!-- Submit Button -->
+        <button id="submitBtn" class="bg-[#F9BB3B] text-white py-2 px-6 rounded-md hover:bg-[#e1a828]">
+          Submit Answer
+        </button>
+  
+        <!-- Close Button -->
+        <button id="closeBtn" class="bg-red-500 text-white py-2 px-6 rounded-md ml-2 hover:bg-red-600 mt-[10px]">Close</button>
+      </div>
+    </div>
+    
+    <!-- Fun Section 2: Fun Fact Cards -->
+    <section class="py-16">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold text-[#1D3557]">Did You Know?</h2>
+        <p class="text-gray-600 mt-4">Discover amazing facts about surgery and the human body that you probably didn't know!</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+            <h3 class="text-2xl font-bold text-[#1D3557]">Fact 1</h3>
+            <p class="text-gray-600 mt-2">The first-ever successful open-heart surgery was performed in 1893 by Dr. Daniel Hale Williams, an African American surgeon.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+            <h3 class="text-2xl font-bold text-[#1D3557]">Fact 2</h3>
+            <p class="text-gray-600 mt-2">In medieval Europe, barbers didn’t just cut hair—they also performed surgical procedures such as bloodletting, tooth extractions, and even amputations. The familiar red and white barber pole comes from this history, representing blood and bandages!</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+            <h3 class="text-2xl font-bold text-[#1D3557]">Fact 3</h3>
+            <p class="text-gray-600 mt-2">The first partial human face transplant was performed in 2005 in France on a woman who had been mauled by a dog. Full-face transplants are now possible, with incredible advancements in medical science and tissue compatibility..</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-12 px-6 md:px-12 lg:px-[100px] text-center">
+      <h2 class="text-4xl font-extrabold text-[#0B3558] mb-6" style="font-family: 'Montserrat', sans-serif">
+        Important Reminders
+      </h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Keep these in mind as you prepare for the journey ahead!
+      </p>
+    
+      <!-- Reminders List -->
+      <div class="space-y-6 text-left max-w-4xl mx-auto">
+        <div class="bg-[#FADDE1] p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-[#9F2747]">Reminder 1</h3>
+          <p class="text-gray-700 mt-2">
+            I hope you have applied for your surgeon in training and you have your SIT number. NB: You will need a letter from your training institution that you've started residency.
+          </p>
+        </div>
+    
+        <div class="bg-blue-50 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-[#9F2747]">Reminder 2</h3>
+          <p class="text-gray-700 mt-2">
+            I hope you have your MSSI certificate for Basic Surgical skills ready.
+          </p>
+        </div>
+    
+        <div class="bg-green-50 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-[#9F2747]">Reminder 3</h3>
+          <p class="text-gray-700 mt-2">
+            Remeber register for the revision course. It's a requirement for both exams.
+          </p>
+        </div>
+    
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-[#9F2747]">Reminder 4</h3>
+          <p class="text-gray-700 mt-2">
+            I hope your logbook is filled and the certificates of training (both Ghana and West African Colleges) have been signed by the heads of the various units.
+          </p>
+        </div>
+    
+        <div class="bg-[#FDE4EA] p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-[#9F2747]">Reminder 5</h3>
+          <p class="text-gray-700 mt-2">
+            I hope your authentication form (WACS) has been signed.
+          </p>
+        </div>
+    
+        <div class="bg-orange-50 p-6 rounded-lg shadow-lg">
+          <h3 class="text-2xl font-semibold text-[#9F2747]">Reminder 6</h3>
+          <p class="text-gray-700 mt-2">
+            I hope you know you can excel.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    
     
     <section class="bg-white py-16">
       <div class="container mx-auto px-4">
@@ -460,6 +604,7 @@
         </div>
       </div>
     </section>
+
     
     
 
@@ -525,6 +670,71 @@
       alert("Incorrect password. Please try again.");
     }
   }
+  // Set the target date for October 19, 2025
+  const targetDate = new Date("October 19, 2025 00:00:00").getTime();
+
+  // Function to update the countdown every second
+  const updateCountdown = () => {
+    // Get current time
+    const now = new Date().getTime();
+
+    // Calculate the difference between now and the target date
+    const difference = targetDate - now;
+
+    // Calculate time units
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    // Display the result in the respective HTML elements
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+    // If the countdown is finished, display a message
+    if (difference < 0) {
+      document.getElementById("countdown").innerHTML = "The exam has started!";
+    }
+  };
+
+  // Update the countdown every second
+  setInterval(updateCountdown, 1000);
+
+  // Select elements
+const quizBtn = document.getElementById('quizBtn');
+const quizModal = document.getElementById('quizModal');
+const closeBtn = document.getElementById('closeBtn');
+const submitBtn = document.getElementById('submitBtn');
+const quizAnswer = document.getElementById('quizAnswer');
+
+// Show modal when "Take the Quiz" button is clicked
+quizBtn.addEventListener('click', () => {
+  quizModal.classList.remove('hidden');
+});
+
+// Hide modal when "Close" button is clicked
+closeBtn.addEventListener('click', () => {
+  quizModal.classList.add('hidden');
+});
+
+// Check the answer when "Submit Answer" button is clicked
+submitBtn.addEventListener('click', () => {
+  const answer = quizAnswer.value.trim().toLowerCase();
+  
+  // Check if the answer is correct
+  if (answer === '2' || answer === 'two' || answer === '2 feet' || answer === 'two feet' || answer === '2 ft' || answer === 'two ft') {
+    alert('Correct answer!');
+  } else {
+    alert('Wrong answer. The correct answer is 2 feet.');
+  }
+  
+  // Clear input field after submission
+  quizAnswer.value = '';
+});
+
+
     </script>
   </body>
 </html>
