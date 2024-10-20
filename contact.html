@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About - EPIGNATHUS</title>
+    <title>Contact - EPIGNATHUS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -20,7 +20,7 @@
         <p>EPIGNATHUS</p>
       </div>
 
-      <!-- Full Menu (visible on md and larger screens) -->
+      <!-- Full Menu -->
       <ul class="hidden lg:flex space-x-6 text-lg font-semibold text-[#0B3558]">
         <li><a href="index.html" class="hover:text-red-400">Home</a></li>
         <li><a href="about.html" class="hover:text-red-400">About</a></li>
@@ -33,7 +33,7 @@
         </li>
       </ul>
 
-      <!-- Hamburger Menu (visible only on small screens) -->
+      <!-- Hamburger Menu -->
       <button class="block lg:hidden text-[#3B888E]" id="menu-btn">
         <svg
           class="w-8 h-8"
@@ -51,38 +51,6 @@
         </svg>
         <p class="text-[12px] font-bold text-[#0F2144]">Menu</p>
       </button>
-
-      <!-- Mobile Menu Links (Initially Hidden) -->
-      <ul
-        id="menu"
-        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg md:hidden"
-      >
-        <li>
-          <a href="index.html" class="block px-4 py-2 hover:text-red-400"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="about.html" class="block px-4 py-2 hover:text-red-400"
-            >About</a
-          >
-        </li>
-        <li>
-          <a href="resources.html" class="block px-4 py-2 hover:text-red-400"
-            >Resources</a
-          >
-        </li>
-        <li>
-          <a href="quizzes.html" class="block px-4 py-2 hover:text-red-400"
-            >Quizzes</a
-          >
-        </li>
-        <li>
-          <a href="contact.html" class="block px-4 py-2 hover:text-red-400"
-            >Contact Us</a
-          >
-        </li>
-      </ul>
     </nav>
 
     <div class="container mx-auto mt-10 p-5">
@@ -91,9 +59,11 @@
       </h2>
 
       <form
-        action="https://formsubmit.co/jesakwe@gmail.com"
+        action="https://formsubmit.co/j.dei-asamoa@kbth.gov.gh"
         method="POST"
+        id="contact-form"
         class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto"
+        onsubmit="return submitForm(event)"
       >
         <!-- Hidden input for your phone number -->
         <input
@@ -183,30 +153,15 @@
     </footer>
 
     <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
+      // Function to show notification after form submission
+      function submitForm(event) {
+        event.preventDefault(); // Prevent default form submission
 
-      menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-      function accessResource(link) {
-        const passwordInput =
-          document.getElementById("resource-password").value;
+        // Display notification (you can customize this)
+        alert("Your form has been submitted successfully!");
 
-        if (passwordInput === "williamladd") {
-          window.open(link, "_blank");
-        } else {
-          alert("Incorrect password. Please try again.");
-        }
-      }
-      function accessResource(link) {
-        const passwordInput = prompt("Please enter the password:");
-
-        if (passwordInput === "williamladd") {
-          window.open(link, "_blank");
-        } else {
-          alert("Incorrect password. Please try again.");
-        }
+        // Actually submit the form after notification
+        document.getElementById("contact-form").submit();
       }
     </script>
   </body>
