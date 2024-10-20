@@ -9,37 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script>
-      // Open registration form in a new tab
-      function openRegistration() {
-        window.open("register.html", "_blank");
-      }
-
-      // Function to handle registration securely
-      function handleRegistration(event) {
-        event.preventDefault();
-
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        const confirmPassword =
-          document.getElementById("confirmPassword").value;
-
-        if (password !== confirmPassword) {
-          alert("Passwords do not match!");
-          return;
-        }
-
-        // Use a basic hash function for demo purposes (for real-world use, hashing should be done server-side using bcrypt, Argon2, or similar)
-        const hashedPassword = btoa(password); // Use a better hash function in production
-
-        // Send registration details securely (e.g., using fetch or AJAX to backend server)
-        console.log("Username: ", username);
-        console.log("Hashed Password: ", hashedPassword);
-
-        // After registration, redirect to a login page or profile creation
-        window.location.href = "profile.html";
-      }
-    </script>
+    
   </head>
   <body class="text-gray-900">
     <!-- Navbar -->
@@ -58,11 +28,11 @@
           <a href="about.html" class="hover:text-red-400">About</a>
         </li>
         <li>
-          <a href="registries.html" class="hover:text-red-400">Resources</a>
+          <a href="resources.html" class="hover:text-red-400">Resources</a>
         </li>
        
         <li>
-          <a href="research.html" class="hover:text-red-400">Quizzes</a>
+          <a href="quizzes.html" class="hover:text-red-400">Quizzes</a>
         </li>
       
         <li>
@@ -250,7 +220,7 @@
         </div>
        
     
-        <div class="grid grid-cols-3 mt-8 mx-[50px] md:mx-[100px] gap-8 md:gap-[100px]">
+        <div class="grid grid-cols-3 mt-8 mx-[50px] md:mx-[200px] gap-8 md:gap-[100px]">
           <!-- MCQs Card -->
           <button class=" rounded-full shadow-lg p-4  px-2 py-2 rounded-full shadow-lg mt-2 w-[100px] md:w-[200px] border"
           onclick="accessResource('https://www.dropbox.com/scl/fo/wztpdkaboim3ffrprzuh3/AD7RYlRJsGCmuMecf4skTWc?rlkey=66pi6o4mf4f8rdyu0d402vtke&st=jr5rwn1i&dl=0')">
