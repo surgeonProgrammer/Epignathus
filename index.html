@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EPIGNATHUS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Open registration form in a new tab
+      function openRegistration() {
+        window.open("register.html", "_blank");
+      }
+
+      // Function to handle registration securely
+      function handleRegistration(event) {
+        event.preventDefault();
+
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword =
+          document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+          alert("Passwords do not match!");
+          return;
+        }
+
+        // Use a basic hash function for demo purposes (for real-world use, hashing should be done server-side using bcrypt, Argon2, or similar)
+        const hashedPassword = btoa(password); // Use a better hash function in production
+
+        // Send registration details securely (e.g., using fetch or AJAX to backend server)
+        console.log("Username: ", username);
+        console.log("Hashed Password: ", hashedPassword);
+
+        // After registration, redirect to a login page or profile creation
+        window.location.href = "profile.html";
+      }
+    </script>
+  </head>
+  <body class="text-gray-900">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 shadow-lg bg-white mx-auto flex justify-between items-center py-4 px-[50px] md:px-[100px]">
+      <!-- Logo and Title -->
+      <div class="flex items-center text-[#9F2747] font-bold text-4xl">
+        <p>EPIGNATHUS</p>
+      </div>
+    
+      <!-- Full Menu (visible on md and larger screens) -->
+      <ul class="hidden lg:flex space-x-6 text-lg font-semibold text-[#0B3558]">
+        <li>
+          <a href="index.html" class="hover:text-red-400">Home</a>
+        </li>
+        <li>
+          <a href="about.html" class="hover:text-red-400">About</a>
+        </li>
+        <li>
+          <a href="registries.html" class="hover:text-red-400">Textbooks</a>
+        </li>
+        <li>
+          <a href="heroes.html" class="hover:text-red-400">Past Questions</a>
+        </li>
+        <li>
+          <a href="research.html" class="hover:text-red-400">Quizzes</a>
+        </li>
+      
+        <li>
+          <a href="contact.html" class="hover:text-red-400">Contact Us</a>
+        </li>
+      </ul>
+    
+      <!-- Hamburger Menu (visible only on small screens) -->
+      <button class="block lg:hidden text-[#3B888E]" id="menu-btn">
+        <svg
+          class="w-8 h-8"
+          fill="none"
+          stroke="#0F2144"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+        <p class="text-[12px] font-bold text-[#0F2144]">Menu</p>
+      </button>
+    
+      <!-- Mobile Menu Links (Initially Hidden) -->
+      <ul
+        id="menu"
+        class="hidden fixed top-16 left-0 w-full bg-white text-cyan-600 text-lg font-semibold space-y-2 p-4 shadow-lg md:hidden"
+      >
+        <li>
+          <a href="index.html" class="block px-4 py-2 hover:text-red-400">Home</a>
+        </li>
+        <li>
+          <a href="about.html" class="block px-4 py-2 hover:text-red-400">About</a>
+        </li>
+        <li>
+          <a href="registries.html" class="block px-4 py-2 hover:text-red-400">Textbooks</a>
+        </li>
+        <li>
+          <a href="heroes.html" class="block px-4 py-2 hover:text-red-400">Past Questions</a>
+        </li>
+        <li>
+          <a href="research.html" class="block px-4 py-2 hover:text-red-400">Quizzes</a>
+        </li>
+       
+        <li>
+          <a href="contact.html" class="block px-4 py-2 hover:text-red-400">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+    
+
+    <!-- Main Content Placeholder -->
+   
+    
+   
+   
+    <section
+      class="flex flex-col md:flex-row items-center justify-center bg-[#98C2E3] text-white w-full h-full py-[30px] mt-[70px]"
+    >
+      <h1
+        class="text-center font-bold text-[40px] tracking-wide leading-[50px] px-[20px] py-[50px]"
+        style="font-family: 'Montserrat', sans-serif"
+      >
+        Are you currently doing a membership in surgery with the Ghana or West African College of Surgery? This website was created just for you
+      </h1>
+
+      <p class='px-[30px] text-gray-500 text-center mb-[40px] text-[18px] leading-[40px] '>
+        Find recommended textbooks for the various rotations, textbooks on operative surgery, thousands of questions including <br> <span class='rounded-full border px-[12px] bg-[#9F2747] text-white py-[10px] align-center'>past questions</span> and many more
+      </p>
+
+     
+      </div>
+    </section>
+
+    <section class="text-center w-full">
+      <div class="relative w-full md:w-full lg:w-full mx-auto">
+        <img
+          id="carousel-image"
+          src="images/2021.jpg"
+          alt="Gallery"
+          class="w-full h-auto lg:h-[700px] rounded-lg"
+        />
+        <div class="absolute inset-0 flex items-center justify-between">
+          <button
+            onclick="prevImage()"
+            class="bg-white rounded-full p-2 shadow-lg"
+          >
+            ❮
+          </button>
+          <button
+            onclick="nextImage()"
+            class="bg-white rounded-full p-2 shadow-lg"
+          >
+            ❯
+          </button>
+        </div>
+      </div>
+    </section>
+    
+
+   
+    <section class=" py-16">
+      <div class="container mx-auto px-[30px] text-center">
+        <div>
+          <h2 class="text-5xl font-bold">Resources</h2>
+
+          <p class='text-gray-400 mt-4 leading-[30px]'>
+            Find all the recommended books for surgery membershp here. Find books for subspecialties like Paediatric Surgery, General Surgery, Neurosurgery, Plastic Surgery, Orthopaedics, Trauma and Anaesthesia.
+          </p>
+          <button
+          class="bg-[#9F2747] text-white font-bold text-[#1D3557] px-4 py-2 rounded-full shadow-lg mt-8 border border-[#9F2747]"
+          onclick="accessResource('https:www.dropbox.com/scl/fo/hhp0v36fg0r5y2wtgi93d/ADid1W6Gl2Y7nxkQJRxUgvw?rlkey=4ydoomblp2a6wro51rjwvtkjx&st=pb2by7fe&dl=0')"
+        >
+          Click here for all the books
+        </button>
+        </div>
+        
+        
+        <div class="grid grid-cols-2  md:grid-cols-4 gap-6 mt-8">
+          <!-- Textbooks Card -->
+          <button class="bg-white rounded-lg shadow-lg p-4 w-[200px] h-[200px] flex flex-col justify-center items-center border-2 "
+          onclick="accessResource('https:www.dropbox.com/scl/fo/rc78f78qvilr6q8acrkxo/AN8EdfXsg_rSKxYoBFPxzdU?rlkey=kg7brjomwpqklol24yb92y8hg&st=tu2pwxz2&dl=0')">
+            <img src="images/schwartz.webp" alt="Textbooks" class="rounded-lg mb-2 h-[150px] w-[150px] ">
+            <h3 class="text-[15px] font-bold text-[#1D3557]">Textbooks</h3>
+              
+            
+        </button>
+    
+          <!-- Operative Surgery Card -->
+          <button class="bg-white rounded-lg shadow-lg p-4 w-[200px] h-[200px] flex flex-col justify-center items-center border-2"
+          onclick="accessResource('https:www.dropbox.com/scl/fo/7q0q0odwbac7hs9c39zd6/AL3LGxfnhJ-PMY2j_f9vTCw?rlkey=img0vv9iuhx6pq0dy3y8qwk0f&st=49yvndna&dl=0')">
+            <img src="images/operative surgery.jpg" alt="Operative Surgery" class="rounded-lg mb-2 h-[150px] w-[150px]">
+            <h3 class="text-[15px] font-bold text-[#1D3557]">Operative Surgery</h3>
+  
+             
+            
+      </button>
+    
+          <!-- MCQs Card -->
+          <button class="bg-white rounded-lg shadow-lg p-4 w-[200px] h-[200px] flex flex-col justify-center items-center border-2 "
+          onclick="accessResource('https:www.dropbox.com/scl/fo/geq9ejv8ux6fb4mmxltit/AKCEC6E-4IZLoVsOMpKB-OA?rlkey=7c41189wppbomi4lrj1b0g1ls&st=tdajlg6i&dl=0')">
+            <img src="images/mcqs.jpg" alt="MCQs" class="rounded-lg mb-4 h-[150px]">
+            <h3 class="text-[15px] font-bold text-[#1D3557]">MCQs</h3>
+        
+             
+      
+    </button>
+    
+          <!-- OSCE Card -->
+          <button class="bg-white rounded-lg shadow-lg p-4 w-[200px] h-[200px] flex flex-col justify-center items-center border-2"
+          onclick="accessResource('https:www.dropbox.com/scl/fo/i96ucb52qxgt9f341iwja/AOZDYPZoo7n0_zvxnN_GGAA?rlkey=8474gl92wwccmp5d45bdycamx&st=vnxaryfs&dl=0')">
+            <img src="images/osce station.webp" alt="OSCE" class="rounded-lg mb-2 h-[170px]">
+            <h3 class="text-[15px] font-bold text-[#1D3557]">OSCE</h3>
+            
+             
+            
+  </button>
+        </div>
+      </div>
+    </section>
+
+    <section class=" py-16">
+      <div class="container mx-auto text-center ">
+        <div>
+          <h2 class="text-3xl font-bold text-[#1D3557]">Past Questions</h2>
+          <p class='text-gray-400 mt-4 leading-[30px] mx-[30px]'>
+            Find up to date past questions, including 2024 for both Ghana and West Africa.
+          </p>
+          <button
+              class=" shadow-lg p-4 bg-[#9F2747] text-[#F1FAEE] font-bold px-4 py-2  rounded-[50px] shadow-lg mt-4 mb-[-20px] border border-[#98C2E3]"
+              onclick="accessResource('https:www.dropbox.com/scl/fo/4f5ll7x3wia5cs0uow7yo/AMPfZs1DB-Zg8as2amgswmg?rlkey=50ed7a2f52b3da17yxf9thzli&st=88u8dx6o&dl=0')"
+            >
+              Access the whole question bank here
+            </button>
+
+        </div>
+       
+    
+        <div class="grid grid-cols-3 mt-8 mx-[50px] md:mx-[100px]">
+          <!-- MCQs Card -->
+          <button class=" rounded-full shadow-lg p-4  px-2 py-2 rounded-full shadow-lg mt-2 w-[100px] md:w-[300px] border"
+          onclick="accessResource('https:www.dropbox.com/scl/fo/wztpdkaboim3ffrprzuh3/AD7RYlRJsGCmuMecf4skTWc?rlkey=66pi6o4mf4f8rdyu0d402vtke&st=jr5rwn1i&dl=0')">
+            <h3 class="text-2xl font-bold  ">MCQs</h3>
+      
+              
+            
+              
+        </button>
+    
+          <!-- OSCE Card -->
+          <button class="  rounded-full shadow-lg p-4  font-bold px-4 py-2 rounded-full shadow-lg mt-2 w-[100px] md:w-[300px] border"
+          onclick="accessResource('https:www.dropbox.com/scl/fo/o3ifv5rr87fby53v5qyyi/AFUzBsHVMj6gS_srCpTgs_c?rlkey=zy725ernaq4j7r921znsxbc3c&st=ectyuwen&dl=0')"">
+            <h3 class="text-2xl font-bold">OSCE</h3>
+          
+            
+      </button>
+    
+          <!-- Essay Card -->
+          <button class="rounded-full shadow-lg p-4  px-4 py-2 rounded-full shadow-lg mt-2 w-[100px] md:w-[300px] border"
+          onclick="accessResource('https:www.dropbox.com/scl/fo/4f5ll7x3wia5cs0uow7yo/AMPfZs1DB-Zg8as2amgswmg?rlkey=50ed7a2f52b3da17yxf9thzli&st=p7cllyxh&dl=0')">
+            <h3 class="text-2xl font-bold ">Essays</h3>
+        
+             
+            
+    </button>
+        </div>
+      </div>
+    </section>
+    
+
+    
+
+    <section id="emrcs" class=" py-16">
+      <div class="container mx-auto text-center">
+
+        <h1 class='text-[30px] font-bold'>
+          Useful youtube video links
+        </h1>
+        <h2 class="text-3xl text-gray-400 mt-[20px]">eMRCS</h2>
+
+    
+        <!-- YouTube Thumbnail with Link -->
+        <div class="mt-4 w-full max-w-2xl mx-auto">
+          <a href="https://www.youtube.com/watch?v=lblQ7tKmDlA&list=PLkD6zQbF_09vGTndGyXIymMKBSVOTTVvc" target="_blank">
+            <img
+              src="https://img.youtube.com/vi/lblQ7tKmDlA/maxresdefault.jpg"
+              alt="eMRCS Video Thumbnail"
+              class=" md:w-full h-auto rounded-lg shadow-lg hover:opacity-80 transition-opacity duration-300"
+            />
+          </a>
+        </div>
+    
+        <!-- Click to Watch Button -->
+        <div class="mt-4">
+          <a
+            href="https://www.youtube.com/watch?v=lblQ7tKmDlA&list=PLkD6zQbF_09vGTndGyXIymMKBSVOTTVvc"
+            target="_blank"
+            class="bg-white text-[#BF778A] font-bold px-6 py-3 rounded-full shadow-lg hover:bg-[#BF778A] hover:text-white transition-colors duration-300"
+            style="font-family: 'Montserrat', sans-serif"
+          >
+            Click Here to Watch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="surgical-videos" class="bg-gradient-to-r from-[#A8DADC] to-[#B8E994] py-16 ">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold text-[#1D3557]">Surgical Skills Videos</h2>
+        <p class="mt-4 text-lg text-[#457B9D] px-[30px]">
+          Explore educational videos on essential surgical techniques. Click below to watch.
+        </p>
+    
+        <div class="grid grid-cols-2  lg:grid-cols-3 gap-8 mt-8 mx-[20px]">
+    
+          <!-- Open Appendicectomy -->
+
+          
+          <div class="bg-white rounded-lg shadow-lg p-4 h-[250px] md:h-[350px]">
+            <a href="https://www.youtube.com/watch?v=zPP8sy1C6-4&t=820s" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/zPP8sy1C6-4/maxresdefault.jpg"
+                alt="Open Appendicectomy"
+                class="w-full h-auto rounded-lg hover:opacity-80 transition-opacity duration-300"
+              />
+            </a>
+            <h3 class="mt-4 text-[18px] font-bold text-[#1D3557]">Open Appendicectomy</h3>
+            <a
+              href="https://www.youtube.com/watch?v=zPP8sy1C6-4&t=820s"
+              target="_blank"
+              class="bg-[#A8DADC] text-[#1D3557] text-[15px] font-bold px-4 py-3 rounded-full shadow-lg mt-2 inline-block hover:bg-[#457B9D] hover:text-white transition-colors duration-300"
+            >
+              Click Here to Watch
+            </a>
+          </div>
+    
+          <!-- Bowel Resection and Anastomosis -->
+          <div class="bg-white rounded-lg shadow-lg p-4 h-[250px] md:h-[350px]">
+            <a href="https://www.youtube.com/watch?v=LDVbKMYncgQ" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/LDVbKMYncgQ/maxresdefault.jpg"
+                alt="Bowel Resection and Anastomosis"
+                class="w-full h-auto rounded-lg hover:opacity-80 transition-opacity duration-300"
+              />
+            </a>
+            <h3 class="mt-4 text-[18px] font-bold text-[#1D3557]">Bowel Resection and Anastomosis</h3>
+            <a
+              href="https://www.youtube.com/watch?v=LDVbKMYncgQ"
+              target="_blank"
+              class="bg-[#B8E994] text-[#1D3557] font-bold px-4 py-3 rounded-full shadow-lg mt-2 inline-block hover:bg-[#2A9D8F] hover:text-white transition-colors duration-300 text-[15px]"
+            >
+              Click Here to Watch
+            </a>
+          </div>
+    
+          <!-- One-Handed Surgeon's Knot -->
+          <div class="bg-white rounded-lg shadow-lg p-4 h-[250px] md:h-[350px]">
+            <a href="https://www.youtube.com/watch?v=3uQZUQFi9pI" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/3uQZUQFi9pI/maxresdefault.jpg"
+                alt="One-Handed Surgeon's Knot"
+                class="w-full h-auto rounded-lg hover:opacity-80 transition-opacity duration-300"
+              />
+            </a>
+            <h3 class="mt-4 text-[18px] font-bold text-[#1D3557]">One-Handed Surgeon's Knot</h3>
+            <a
+              href="https://www.youtube.com/watch?v=3uQZUQFi9pI"
+              target="_blank"
+              class="bg-[#A8DADC] text-[#1D3557] font-bold px-4 py-3 rounded-full shadow-lg mt-2 inline-block hover:bg-[#457B9D] hover:text-white transition-colors duration-300 text-[15px]"
+            >
+              Click Here to Watch
+            </a>
+          </div>
+    
+          <!-- Two-Handed Surgeon's Knot -->
+          <div class="bg-white rounded-lg shadow-lg p-4 h-[250px] md:h-[350px]">
+            <a href="https://www.youtube.com/watch?v=b9AdTJr_98w" target="_blank">
+              <img
+                src="https://img.youtube.com/vi/b9AdTJr_98w/maxresdefault.jpg"
+                alt="Two-Handed Surgeon's Knot"
+                class="w-full h-auto rounded-lg hover:opacity-80 transition-opacity duration-300"
+              />
+            </a>
+            <h3 class="mt-4 text-[18px] font-bold text-[#1D3557]">Two-Handed Surgeon's Knot</h3>
+            <a
+              href="https://www.youtube.com/watch?v=b9AdTJr_98w"
+              target="_blank"
+              class="bg-[#B8E994] text-[#1D3557] font-bold px-4 py-3 rounded-full shadow-lg mt-2 inline-block hover:bg-[#2A9D8F] hover:text-white transition-colors duration-300 text-[15px]"
+            >
+              Click Here to Watch
+            </a>
+          </div>
+    
+          <!-- Slip Knot -->
+         <!-- Slip Knot -->
+<div class="bg-white rounded-lg shadow-lg p-4 h-[250px] md:h-[350px]">
+  <a href="https://www.youtube.com/watch?v=GqgkDIyCyBo&t=3s" target="_blank">
+    <img
+      src="https://img.youtube.com/vi/GqgkDIyCyBo/hqdefault.jpg"
+      alt="Slip Knot"
+      class="w-full h-[120px] md:h-[200px] rounded-lg hover:opacity-80 transition-opacity duration-300"
+    />
+  </a>
+  <h3 class="mt-4 text-[18px] font-bold text-[#1D3557]">Slip Knot</h3>
+  <a
+    href="https://www.youtube.com/watch?v=GqgkDIyCyBo&t=3s"
+    target="_blank"
+    class="bg-[#A8DADC] text-[#1D3557] font-bold px-4 py-3 rounded-full shadow-lg mt-2 inline-block hover:bg-[#457B9D] hover:text-white transition-colors duration-300 text-[15px]"
+  >
+    Click Here to Watch
+  </a>
+</div>
+
+    
+        </div>
+      </div>
+    </section>
+    
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center text-[#1D3557] mb-12">MGCS/MWACS PREP-SURGERY</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+          <!-- Column 1 -->
+          <div>
+            <h3 class="text-xl font-bold text-[#1D3557]">Created by</h3>
+            <p class="mt-4 text-gray-600">
+              Dr. Jessica Dei-Asamoa<br>
+              Paediatric Surgery Unit<br>
+              Department of Surgery<br>
+              Korle-Bu Teaching Hospital
+            </p>
+          </div>
+          
+          <!-- Column 2 -->
+         
+    
+          <!-- Column 3 -->
+          <div>
+            <h3 class="text-xl font-bold text-[#1D3557]">Contact</h3>
+            <p class="mt-4 text-gray-600">
+              Email: <a href="mailto:info@korlebu.com" class="hover:text-[#9F2747]">j.dei-asamoa@kbth.gov.gh</a><br>
+              Phone: +233 201284701
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+
+    <footer class="bg-[#0F2144] text-white py-4 text-center">
+      <p>
+        &copy; 2024 Epignathus. All rights
+        reserved.
+      </p>
+    </footer>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+      let currentIndex = 0;
+      const images = [
+    "images/2021.jpg",
+    "images/2022.jpg",
+    "images/2023.jpg",
+    "images/2024.jpg"
+];
+
+        // Add more image paths as necessary
+      ;
+
+      function showImage(index) {
+        const imgElement = document.getElementById("carousel-image");
+        imgElement.src = images[index];
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      }
+
+      // Automatic image transition
+      setInterval(nextImage, 3000);
+
+      function accessResource(link) {
+        const passwordInput = document.getElementById("resource-password").value;
+    
+        if (passwordInput === "williamladd") {
+          window.open(link, "_blank");
+        } else {
+          alert("Incorrect password. Please try again.");
+        }
+      }
+
+      function accessResource(link) {
+    const passwordInput = prompt("Please enter the password:");
+
+    if (passwordInput === "williamladd") {
+      window.open(link, "_blank");
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  }
+    </script>
+  </body>
+</html>
